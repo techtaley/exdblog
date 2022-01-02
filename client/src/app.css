@@ -1,0 +1,50 @@
+@import './components/header/header.css';
+@import './components/post/post.css';
+@import './components/posts/posts.css';
+@import './components/sidebar/sidebar.css';
+@import './components/singlepost/singlepost.css';
+@import './components/topbar/topbar.css';
+
+@import './pages/about/about.css';
+@import './pages/contact/contact.css';
+@import './pages/home/home.css';
+@import './pages/login/login.css';
+@import './pages/logout/logout.css';
+@import './pages/register/register.css';
+@import './pages/settings/settings.css';
+@import './pages/single/single.css';
+@import './pages/write/write.css';
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
+
+* {
+  font-family: 'Barlow', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: #fff;
+}

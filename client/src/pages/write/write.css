@@ -1,0 +1,84 @@
+.write{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.writeImg{
+    width: 100%;
+    max-width: 800px; 
+    height:  300px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.writeForm {
+    position: relative;
+    width: 100%;
+    font-family: 'Benne', serif;    
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    color: #666;
+}
+
+.writeIcon {
+    width: 25px;
+    height: 25px;
+    border: 1px solid;
+    border-radius: 50%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; */
+}
+
+.formFileInput {
+    display: none;
+}
+
+.formWriteInput{
+    font-family: 'Benne', serif; 
+    font-weight: bold;   
+    margin-left: 5px;
+    font-size: 35px;
+    border: none;
+}
+
+.formCategInput{
+    font-family: 'Benne', serif; 
+    font-weight: bold;   
+    margin-left: 5px;
+    font-size: 35px;
+    border: none;
+}
+
+.writeInput {
+    font-family: 'Benne', serif;    
+    width: 350px;
+    font-size: 25px;
+    border: none;
+}
+
+.formWriteInput:focus {
+    outline: none;
+}
+
+.writeSubmit{
+    align-self: center;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    cursor: pointer;
+    border-color: rgb(34, 66, 66);
+    background-color:rgb(34, 66, 66);
+    color: #fff;
+}
+
+.writeFormGroup {
+    margin-top: 20px;
+}

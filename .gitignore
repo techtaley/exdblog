@@ -1,0 +1,6 @@
+/node_modules
+.env 
+package-lock.json
+s3.js
+server_disabled.js
+package_HOST.json

@@ -1,0 +1,25 @@
+.home{
+    display: flex;
+}
+
+.homeSide {
+    display: flex;
+    flex-direction: column;
+}
+
+.blogs {
+    font-size: 60px;    
+    text-align: center;
+    color:rgb(98, 138, 98);
+    font-family: 'Parisienne', cursive;
+    font-family: 'Benne', cursive;
+    letter-spacing: 15px;    
+}
+
+@media only screen and (max-width: 760px) {
+    .home{
+        display: flex;
+        flex: 12;
+        flex-direction: column;
+    }
+}

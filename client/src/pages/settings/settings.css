@@ -1,0 +1,107 @@
+.settings {
+    display: flex;
+}
+
+.settingsWrapper {
+    flex: 9;
+    padding: 20px;
+}
+
+.settingsTitle{
+    display: flex;
+    justify-content: center;
+}
+
+.settingsUpdateTitle{ 
+    font-family: 'Benne', serif;
+    color: palevioletred;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.settingsUpdateDelete{ 
+    font-family: 'Benne', serif;
+    color: palevioletred;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+
+
+.settingsImg{
+    width: 80px;
+    height:  80px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.settingsProfile{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.settingsProfileIcon{
+    display: flex;
+    align-items: center;
+    color: palevioletred;
+    margin-left: 5px;
+    cursor: pointer;    
+}
+
+.settingInputForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.settingInputForm input {
+    font-family: 'Benne', serif;    
+    margin-bottom: 15px;
+    height: 30px;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+}
+
+.settingsSubmit{
+    font-size: 18px;
+    padding: 5px;
+    color: #fff;
+    border-color: palevioletred;
+    border-radius: 10px;
+    background-color: palevioletred; 
+    width: 100px;
+    align-self: center;
+    margin-top: 40px;
+}
+
+.settingsDelete{
+    font-size: 18px;
+    padding: 5px;
+    color: #fff;
+    border-color: palevioletred;
+    border-radius: 10px;
+    background-color: palevioletred; 
+    width: 150px;
+    align-self: center;    
+    margin: 30px auto;
+    display: block;
+
+}    
+
+.profileUpdatebtn {
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profileDeletebtn {
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+}

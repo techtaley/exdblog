@@ -1,0 +1,52 @@
+.logout{
+    display: flex;
+    flex-direction: column; 
+    font-size: 20px; 
+    height: calc(100vh - 10px);  /* due to bkgr img cover and takes 50px off tp*/
+    justify-content: center;
+    background-image: url("https://images.pexels.com/photos/1183021/pexels-photo-1183021.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1920");
+    background-size: cover;
+}
+
+.logoutTitle {
+    align-self: center;
+}
+
+.logoutForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoutForm input {
+    width: 200px;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.logoutBtn {
+    margin-top: 30px;
+    padding: 8px;
+    border-radius: 5px;   
+    background-color: rgb(33, 121, 180);
+    border-top: rgb(33, 121, 180); 
+    color: #fff;
+    cursor: pointer; 
+    font-size: 18px;  
+}
+
+.loginBtn {
+    margin-top: 30px;
+    align-self:center;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: rgb(33, 121, 180);
+    border-top: rgb(33, 121, 180);
+    color: #fff;    
+    cursor: pointer; 
+    font-size: 18px;     
+}

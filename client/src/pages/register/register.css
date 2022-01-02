@@ -1,0 +1,55 @@
+.register{
+    display: flex;
+    flex-direction: column; 
+    font-size: 20px; 
+    height: calc(100vh - 10px);  /* due to bkgr img cover and takes 50px off tp*/
+    justify-content: center;
+    background-image: url("https://images.pexels.com/photos/618833/pexels-photo-618833.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1920");
+    background-size: cover;
+}
+
+.registerTitle {
+    align-self: center;
+    color: #fdfdfd;
+}
+
+.registerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registerForm input {
+    width: 200px;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #fdfdfd;
+}
+
+.loginBtn {
+    margin-top: 30px;
+    align-self: center;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: rgb(33, 121, 180);
+    border-top: rgb(33, 121, 180); 
+    color: #fff;
+    cursor: pointer; 
+    font-size: 18px;  
+}
+
+.registerBtn {
+    margin-top: 40px;
+    align-self:center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(33, 121, 180);
+    border-top: rgb(33, 121, 180);
+    color: #fdfdfd;    
+    cursor: pointer; 
+    font-size: 18px;     
+}

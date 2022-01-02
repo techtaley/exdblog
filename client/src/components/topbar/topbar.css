@@ -1,0 +1,129 @@
+.topBar {
+    height: 50px;
+    top: 0;
+    position: sticky; /* use sticky instead of fixed; sticky occupies space, fixed does not */
+    width: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    display: flex;
+    align-items: center;  /* centers row vertically*/
+    font-family: 'Dosis', sans-serif;
+    z-index: 99;    
+}
+
+.topLeft, .topRight {
+    flex: 3;
+    display:flex;
+    justify-content: center;  /* centers column horizontally*/
+    align-items: center;
+}
+
+.topLeft{
+    cursor: pointer;
+    color: #555;
+}
+
+.socialIcon{
+    margin: 0 5px;
+}
+
+.topCenter {
+    flex: 6;
+    display:flex;
+    justify-content: center;  /* centers column horizontally*/
+}
+
+.topCenter .topMenu {
+    margin: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-Decoration: none; 
+    color: inherit;      
+}
+
+.profileImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    padding-right: 10px;
+}
+
+.searchIcon {
+    cursor: pointer;
+    padding-right: 10px;
+}
+
+.MuiSvgIcon-root.hamburger{
+    font-size: 2rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.mobile-menu {
+    display: none;
+}  
+
+.navBar {
+    height: 50px;
+    top: 0;
+    position: sticky; /* use sticky instead of fixed; sticky occupies space, fixed does not */
+    width: 100%;
+    background: rgba(0, 0, 0, 0.25);
+    color: #fff;
+    align-items: center;  /* centers row vertically*/
+    font-family: 'Dosis', sans-serif;
+    z-index: 99; 
+    display: flex;
+}
+   
+/* .socialIcon {
+    background-color: darkgrey;
+} */
+
+@media only screen and (max-width: 760px) {
+   .topBar {
+        padding-top: 10px;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .topLeft {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .topCenter, .topRight {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 12;  
+    } 
+    
+    .topCenter .topMenu {
+        margin-bottom: 0;
+    }
+
+    .searchIcon {
+        padding: 10px;
+        color: rgb(113, 121, 126);        
+    }  
+
+    .mobile-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 10px 10px 10px 10px;
+        background: rgba(0, 0, 0, 0.25);
+    }   
+
+    .navBar {
+        height: auto;
+        flex-direction: column;
+    }
+
+    #hidden {
+        display: none;  
+    }
+}
