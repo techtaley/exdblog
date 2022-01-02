@@ -24,9 +24,9 @@ export default function TopBar() {
     
     //const PF = 'https://process.env.AWS_BUCKET_NAME.s3.amazonaws.com/' 
     //const PF = 'https://exdblog-app.s3.amazonaws.com/' 
-    //const PF = "http://localhost:4000/images/"  //PF = public folder 
+    const PF = "http://localhost:4000/images/"  //PF = public folder 
     //const PF = "https://expansivedesigns.com/exdblog/api/"  
-    const PF = "https://exdblog.herokuapp.com/images/"  //PF = public folder   
+    //const PF = "https://exdblog.herokuapp.com/images/"  //PF = public folder   
 
     const handleLogout = () => {
         dispatch({ type: "LOGOUT" })  //if logout click, dispatches Logout action type 
