@@ -150,7 +150,7 @@ app.get('*', (req, res) => {
 //use for heroku app
 app.use(cors({
     credentials: true, 
-    origin: ['https://exdblog.herokuapp.com/api']  
+    origin: ['https://exdblog.herokuapp.com/api', 'https://exdblog-app.s3.amazonaws.com/']  
 }))  
 
 app.listen(PORT, () => console.log(`Server is up and running ${PORT}`))
