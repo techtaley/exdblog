@@ -147,10 +147,10 @@ app.get('*', (req, res) => {
 //      origin: ['http://localhost:4000/api']  
 // }))  
 
-//use for heroku app
-app.use(cors({
-    credentials: true, 
-    origin: ['https://exdblog.herokuapp.com/api', 'http://localhost:4000']  
-}))  
+//use for heroku app - permits clients to access these
+// app.use(cors({
+//     credentials: true, 
+//     origin: ['https://exdblog.herokuapp.com/api', 'http://localhost:4000']  
+// }))  
 
 app.listen(PORT, () => console.log(`Server is up and running ${PORT}`))
