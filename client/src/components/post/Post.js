@@ -12,7 +12,9 @@ dotenv.config()
 export default function Post({ post }) {  
     //localhost/4000 is the local server or api to store images in small projects           
 
-    const PF = 'https://s3.amazonaws.com/process.env.AWS_BUCKET_NAME/' 
+    //const PF = 'https://s3.amazonaws.com/process.env.AWS_BUCKET_NAME/' 
+    const PF = 'https://s3.amazonaws.com/AWS_BUCKET_NAME/'     
+    //const PF = 'https://AWS_BUCKET_NAME.s3.amazonaws.com/'   
     //const PF = 'https://exdblog-app.s3.amazonaws.com/'  //production - photos stored in aws3
     //const PF = "http://localhost:4000/images/"  //for testing one when photos in server/images  
     //const PF = "https://expansivedesigns.com/exdblog/images/"
