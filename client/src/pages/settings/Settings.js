@@ -24,8 +24,8 @@ export default function Settings() {
     const { user, dispatch }  = useContext(Context)
     //this does not represent the api, it's where images are stored, e.g. /images aws3 bucket
 
-    //const PF = 'https://process.env.AWS_BUCKET_NAME.s3.amazonaws.com/' 
-    const PF = 'https://exdblog-app.s3.amazonaws.com/' 
+    const PF = 'https://s3.amazonaws.com/process.env.AWS_BUCKET_NAME/'
+    //const PF = 'https://exdblog-app.s3.amazonaws.com/' 
     //const PF = "http://localhost:4000/images/"  //PF = public folder    
     //const PF = "https://expansivedesigns.com/exdblog/images/" 
     //const PF = "https://expansivedesigns.com/projects/exdblog/images/"  

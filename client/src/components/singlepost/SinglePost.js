@@ -17,9 +17,9 @@ export default function SinglePost() {  //pass results?  variable in order to se
     const path = location.pathname.split("/")[2]   //needs post id from "/path/8394393493rj" gets id "8394393493rj"  
     const [post, setPost] = useState({}) 
      //localhost/4000 is the local server or api to store images in small projects
-     
-    //const PF = 'https://process.env.AWS_BUCKET_NAME.s3.amazonaws.com/' 
-    const PF = 'https://exdblog-app.s3.amazonaws.com/'    
+
+     const PF = 'https://s3.amazonaws.com/process.env.AWS_BUCKET_NAME/'     
+    //const PF = 'https://exdblog-app.s3.amazonaws.com/'    
     //const PF = "http://localhost:4000/images/"  //PF = public folder        
     //const PF = "https://expansivedesigns.com/exdblog/api/"  
     //const PF = "https://exdblog.herokuapp.com/images/"  //PF = public folder   
