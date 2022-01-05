@@ -24,11 +24,13 @@ export default function Settings() {
     const { user, dispatch }  = useContext(Context)
     //this does not represent the api, it's where images are stored, e.g. /images aws3 bucket
 
-    const PF = 'https://s3.amazonaws.com/process.env.AWS_BUCKET_NAME/'
-    //const PF = 'https://exdblog-app.s3.amazonaws.com/' 
-    //const PF = "http://localhost:4000/images/"  //PF = public folder    
-    //const PF = "https://expansivedesigns.com/exdblog/images/" 
-    //const PF = "https://expansivedesigns.com/projects/exdblog/images/"  
+    const PF = 'https://exdblog-app.s3.amazonaws.com/'  //production - photos stored in aws3
+    //const PF = 'https://s3.amazonaws.com/process.env.AWS_BUCKET_NAME/'  //not working
+    //const PF = 'https://s3.amazonaws.com/AWS_BUCKET_NAME/'     //not working
+    //const PF = 'https://AWS_BUCKET_NAME.s3.amazonaws.com/'   //not working
+    //const PF = 'https://process.env.AWS_BUCKET_NAME.s3.amazonaws.com/'   //not working
+    //const PF = "http://localhost:4000/images/"  //for testing one when photos in server/images  
+    //const PF = "https://expansivedesigns.com/exdblog/images/"
     //const PF = "https://exdblog.herokuapp.com/images/"  //temp location of stored images - PF = public folder  - does not work for heroku  
 
     const handleSubmit = async (e) => {
