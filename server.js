@@ -128,6 +128,7 @@ app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '/client', 'build', 'index.html'))
 })
 
+//No need to set CORS
 //app.use(cors())
 
 //scheme://hostname:port - no issue if one origin has the same origin as requested origin
