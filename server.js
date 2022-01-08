@@ -24,8 +24,6 @@ app.use(express.json())
 
 const PORT = process.env.PORT || 4000
 
-const dbURL = "mongodb://mongo:27017/exdblog"
-
 mongoose.connect(process.env.MONGODB_URI || dbURL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -55,14 +53,10 @@ mongoose.connect(process.env.MONGODB_URI || dbURL, {
 
 // const upload = multer({ storage: storage })  //config to upload of storage, created above
 
-// app.post("/api/upload", upload.single("file"), (req, res) => {  //uploading file named "file"
-//     const file = req.file  //FE requests the file
-//     console.log(file)
-//     res.send(file)   //FE sends the file back to the client
-//     req.status(200).json("File has been uploaded.") //  
-// })
+// //*** AWS3 test local code - end *** 
 
-// //*** AWS3 test local code - end ***    
+
+//*** AWS3 Clous storage - start *** 
 
 //step 2.  Upload images from client-side to AWS3
 const aws = require('aws-sdk')
@@ -110,7 +104,11 @@ const upload = multer({
     })
 })
 
-app.post("/api/upload", upload.single("file"), (req, res) => {  //update file to aws3 based on multer
+// //*** AWS3 Clous storage - end *** 
+
+
+//update file to aws3 based on multer configs
+app.post("/api/upload", upload.single("file"), (req, res) => {  
     const file = req.file  //FE requests the file
     console.log(file)
     res.send(file)   //FE sends the file back to the client
@@ -134,7 +132,7 @@ app.get('*', (req, res) => {
 //app.use(cors())
 
 //scheme://hostname:port - no issue if one origin has the same origin as requested origin
-//but if client (https://expandivedesigns/exdblog), tries to access data from API (http://localhost:4000/api), 
+//but if client (https://expandivedesigns/exdblog) tries to access data from API (http://localhost:4000/api), 
 //we must set cors to allow client to access this origin (http://localhost:4000/api)
 //BE uses CORS to browser I give permission to FE to Fetch data from your BE 'http://localhost:4000/api'
 //in order to grab posts from server and display on FE

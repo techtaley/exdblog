@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-//?? what is the endpoint for aws3 and expansive designs
-
 export const axiosInstance = axios.create({
     //baseURL: "http://localhost:3000"      
     //baseURL: "https://expansivedesigns.com/exdblog/api/"   
