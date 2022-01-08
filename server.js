@@ -106,7 +106,6 @@ const upload = multer({
 
 // //*** AWS3 Clous storage - end *** 
 
-
 //update file to aws3 based on multer configs
 app.post("/api/upload", upload.single("file"), (req, res) => {  
     const file = req.file  //FE requests the file
