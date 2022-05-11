@@ -65,6 +65,16 @@ export default function TopBar() {
                     </div>                                   
             </nav>
 
+            <Switch>            
+                <Route exact path="/"><Home /></Route>
+                <Route path="/register">{ user ? <Home /> : <Register />}</Route>
+                <Route path="/login">{ user ? <Home /> : <Login />}</Route>
+                <Route path="/logout">{ user ? <Login /> : <Register />}</Route>          
+                <Route path="/write">{ user ? <Write /> : <Register />}</Route>
+                <Route path="/settings">{ user ? <Settings /> : <Register />}</Route>
+                <Route path="/post/:postId"><Single /></Route>                     
+            </Switch>
+
             {/* <Switch>
                 <Route path="/write" exact component={write} />                 
                 <Route path="/logout" exact component={logout} />
