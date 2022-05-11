@@ -65,13 +65,13 @@ export default function TopBar() {
                     </div>                                   
             </nav>
 
-            <Switch>
+            {/* <Switch>
                 <Route path="/write" exact component={write} />                 
                 <Route path="/logout" exact component={logout} />
                 <Route path="/register" exact component={register} />                                     
                 <Route path="/settings" exact component={settings} />   
                 <Route path="/login" exact component={login} />
-            </Switch>   
+            </Switch>    */}
                        
         </Router>                                                     
     )
