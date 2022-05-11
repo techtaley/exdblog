@@ -27,8 +27,9 @@ export default function TopBar() {
     }
    
     return (
-        <Router>
-            <div className="mobile-menu">   
+    //<Router>
+        <>
+           <div className="mobile-menu">   
                 <Menu onClick={() => setShowNav(!showNav)} />
             </div> 
 
@@ -63,7 +64,8 @@ export default function TopBar() {
                     }
                         <Search className="searchIcon"/>    
                     </div>                                   
-            </nav>                       
-        </Router>                                                     
+            </nav> 
+        </>                        
+    //</Router>                                                     
     )
 }
