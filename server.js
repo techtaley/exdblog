@@ -117,8 +117,6 @@ app.use("/api/posts", postRoute)
 app.use("/api/categories", categoryRoute) 
 app.use("/api/users", userRoute)
 
-//app.use("/images", express.static(path.join(__dirname, "/images")))  //makes the images folder public
-
 app.use(express.static(path.join(__dirname, '/client/build'))) 
 
 app.get('*', (req, res) => {  
