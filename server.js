@@ -98,8 +98,6 @@ const upload = multer({
         key: function (req, file, cb) {  //name of file taken from originalname and saved as key
             console.log(file)
             cb(null, file.originalname )  //if no original name then error is null
-            //cb(null, Date.now() + '-' + file.originalname)
-            //cb(null, Date.now().toString())            
         }
     })
 })
@@ -111,7 +109,6 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
     const file = req.file  //FE requests the file
     console.log(file)
     res.send(file)   //FE sends the file back to the client
-    //req.status(200).json("File has been uploaded.") //
 })
 
 //endpoints
@@ -127,29 +124,5 @@ app.use(express.static(path.join(__dirname, '/client/build')))
 app.get('*', (req, res) => {  
         res.sendFile(path.join(__dirname, '/client', 'build', 'index.html'))
 })
-
-//No need to set CORS
-//app.use(cors())
-
-//scheme://hostname:port - no issue if one origin has the same origin as requested origin
-//but if client (https://expandivedesigns/exdblog) tries to access data from API (http://localhost:4000/api), 
-//we must set cors to allow client to access this origin (http://localhost:4000/api)
-//BE uses CORS to browser I give permission to FE to Fetch data from your BE 'http://localhost:4000/api'
-//in order to grab posts from server and display on FE
-
-//permitted API/Endpoints
-//this give client permission to access resources at this origin (scheme,host, and port)
-
-//use for local app
-// app.use(cors({
-//      credentials: true, 
-//      origin: ['http://localhost:4000/api']  
-// }))  
-
-//use for heroku app - permits clients to access these
-// app.use(cors({
-//     credentials: true, 
-//     origin: ['https://exdblog.herokuapp.com/api', 'http://localhost:4000']  
-// }))  
 
 app.listen(PORT, () => console.log(`Server is up and running ${PORT}`))

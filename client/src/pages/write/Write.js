@@ -11,67 +11,47 @@ export default function Write() { //pass variable in order to setImgUrl
     const [desc, setDesc] = useState("")
     const [categories, setCategories] = useState([])
     const [file, setFile] = useState(null) 
-    //const [imageUrl, setImageUrl] = useState('')   
     
-    const { user } = useContext(Context) //gets initial user's login status from context; null
+    const { user } = useContext(Context) 
      
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const newPost = {  //doesn't upload image here 
+        const newPost = {  
             username: user.username,
             title,
             desc,
             categories,
         }
 
-        if(file){  //if image file exisits, uploads it
-            const data = new FormData()  //create an empty data varible to hold image
-            const filename = file.name  //create image variable - Data.now() prevents duplicate
-            //const filename = Date.now() + '-' + file.name  //create image variable - Data.now() prevents duplicate 
-            //const filename = Date.now().toString()  //create image variable - Data.now() prevents duplicate 
-            data.append("name", filename)  //add filename of image to data variable
-            data.append("file", file)  //adds actual image to data variable
-            newPost.photo = filename //add save filename file to the newPost 
+        if(file){  
+            const data = new FormData()  
+            const filename = file.name  
+            data.append("name", filename)  
+            data.append("file", file) 
+            newPost.photo = filename 
 
-            try { //axios uses client api at "proxy": "http://localhost:4000/api/" to post image uploads to aws3
-                //axios uses multer and  'api/upload" to post images to aws3
-                await axiosInstance.post("/upload", data)   //upload image only to s3 bucket 
-                //await axios.post("/upload", data)   //upload image to s3 bucket 
-                
-                // const res = await axios.post("/upload", data)   //upload image to s3 bucket 
-                // const url = res.data.location                
-                // console.log(url) 
-                // setImageUrl(url)  
+            try { 
+                await axiosInstance.post("/upload", data)   
 
             } catch(err) { } 
         }   
 
         
 
-        try {  //??client uses baseURL: "https://expansivedesigns.com/exdblog" to post data (without images) to mongoDB 
-            //we can get a response of data - res.data._id from the post
-            const res = await axiosInstance.post("/posts", newPost)  //adds newPost, with image to db
+        try {  
+            const res = await axiosInstance.post("/posts", newPost)  
             console.log(res.data._id)
-            window.location.replace("/post/" + res.data._id) //then go to the singlepost just uploaded by id              
+            window.location.replace("/post/" + res.data._id)               
         } catch(err){ }   
-
-        // try {
-        //     const res2 = await axios.get("/upload")   //upload image to s3 bucket 
-        //     const key = res2.data.key                
-        //     console.log(key)  //this works - Need to move to another component... 
-        //     setImageKey(key)  
-        // }catch(err){
-
-        // }
     }
 
     return (
         <div className="write">
-            { file && //if an image file exists
+            { file && 
                 <img 
                     className="writeImg" 
-                    src={ URL.createObjectURL(file) } //onChange() create a URL from the selected file, display in Write.js
+                    src={ URL.createObjectURL(file) } 
                     alt="write page pic" />        
             }           
 

@@ -2,8 +2,6 @@ import './register.css'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { axiosInstance } from '../../config'
-//import axios from 'axios'
-//import { Redirect } from 'react-router-dom'  
 
 export default function Register() {
     const [username, setUsername] = useState("")
@@ -11,7 +9,6 @@ export default function Register() {
     const [password, setPassword] = useState("")
 
     const [error, setError] = useState(false)  
-    //const [redirect, setRedirect ] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -24,16 +21,11 @@ export default function Register() {
                 password: password
             })
 
-            //create another try/catch to error handle duplicates by username or email, 
-            //returns res with data that was sent - this can be used/displayed - status 200
-            res.data && window.location.replace("/login") //if no error redirect to register page
-            setError(true)  //if returns res then it's true - auto
-            //resetState()
+            res.data && window.location.replace("/login") 
+            setError(true)  
         } catch(err) {
             setError(false)
         }
-
-        //setRedirect(true)
     }
 
     return (

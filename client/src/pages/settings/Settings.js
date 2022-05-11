@@ -3,8 +3,6 @@ import './settings.css'
 //import axios from 'axios'
 import { axiosInstance } from '../../config'
 
-//import { AccountCircle} from '@material-ui/icons/AccountCircle'
-//import {Facebook, Twitter, Instagram, Search } from '@material-ui/icons';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import { useState, useContext } from 'react'
 import { Context } from '../../context/Context'  
@@ -22,22 +20,14 @@ export default function Settings() {
     //const [profileImage, setProfileImage] = useState('')
 
     const { user, dispatch }  = useContext(Context)
-    //this does not represent the api, it's where images are stored, e.g. /images aws3 bucket
 
     const PF = 'https://exdblog-app.s3.amazonaws.com/'  //production - photos stored in aws3
-    //const PF = 'https://s3.amazonaws.com/process.env.AWS_BUCKET_NAME/'  //not working
-    //const PF = 'https://s3.amazonaws.com/AWS_BUCKET_NAME/'     //not working
-    //const PF = 'https://AWS_BUCKET_NAME.s3.amazonaws.com/'   //not working
-    //const PF = 'https://process.env.AWS_BUCKET_NAME.s3.amazonaws.com/'   //not working
-    //const PF = "http://localhost:4000/images/"  //for testing one when photos in server/images  
-    //const PF = "https://expansivedesigns.com/exdblog/images/"
-    //const PF = "https://exdblog.herokuapp.com/images/"  //temp location of stored images - PF = public folder  - does not work for heroku  
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         dispatch({ type: "UPDATE_START"})
         const updatedUser = {
-            userId: user.id,  //** should be user.id not user._id
+            userId: user.id, 
             username,
             email,
             password,
@@ -51,12 +41,8 @@ export default function Settings() {
             data.append("file", file)  
             updatedUser.profilePic = filename 
             
-            try { //axios uses client api at "proxy": "http://localhost:4000/api/" to post image uploads to aws3
-               await axiosInstance.post("/upload", data)   //upload image to s3 bucket                 
-                // const res = await axios.post("/upload", data)   //upload image to s3 bucket 
-                // const url = res.data.location
-                // console.log(url)
-                // setProfileImage(url)
+            try { 
+               await axiosInstance.post("/upload", data)   
             } catch(err) { } 
             
         }
@@ -75,7 +61,6 @@ export default function Settings() {
            await axiosInstance.delete(`/users/${user._id}`, {
               data: {username: user.username} 
            })
-           //blob:http://localhost:3000/f30a5dc5-651d-43f3-babe-d276a170c5c9window.location.replace("/")
        } catch(err){}
    }
         
@@ -92,7 +77,6 @@ export default function Settings() {
                         <img 
                             className="settingsImg"
                             src={file ? URL.createObjectURL(file) : PF + user.profilePic}
-                            //src={file ? URL.createObjectURL(file) : profileImage}
                             alt="Profile pic"
                         />
                         <label htmlFor="fileInput">

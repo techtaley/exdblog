@@ -12,7 +12,6 @@ import { Context } from './context/Context'
 
 export default function App() {
   const { user } = useContext(Context)
-  //const user = false  //there is no logged in user
 
   return (
     <div className="App">

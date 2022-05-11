@@ -18,11 +18,6 @@ export default function Home() {
     const { search } = useLocation()  //search term can by user, category
 
     useEffect(() => {
-        // const fetchImage = async() => {
-        //     const s3Url =  await axios.get("/upload")
-        //     console.log(s3Url) 
-        //     setImageUrl(imageUrl.map(newImage => newImage = s3Url))
-        // }    
         
         const fetchPosts = async() => {  //gets "heroku.com/?username=techtaley"
             const res = await axiosInstance.get("/posts" + search)  //proxy: "http://localhost:4000/api/"
@@ -30,10 +25,8 @@ export default function Home() {
         }
         
         fetchPosts()  //displays posts
-        //fetchImage()
 
-    //}, [search, imageUrl])  //search is a dependency that will only pull all data and/or by search
-    }, [search])  //search is a dependency that will only pull all data and/or by search
+    }, [search]) 
 
     return (
         <>

@@ -43,8 +43,6 @@ export default function SinglePost() {  //pass results?  variable in order to se
             setPost(res.data)
             setTitle(res.data.title)
             setDesc(res.data.desc)
-            //console.log(res.data.photo)
-            //console.log(res.data) 
 
             //setImagUrl(url)
             //setImageUrl()
@@ -52,13 +50,11 @@ export default function SinglePost() {  //pass results?  variable in order to se
         }
 
         getPost()
-    //}, [path, imagUrl])  //re-render post id only if it changes
     }, [path])  //re-render post id only if it changes
 
     const handleDelete = async() => {  //deleting from FE
-        try {   //represents client - baseURL: "https://expansivedesigns.com/exdblog", to delete data
+        try {   
             await axios.delete(`/posts/${post._id}`, {
-                //await axiosInstance.delete("/posts/" + post._id, {                
                data: {username: user.username} 
             })
             window.location.replace("/")
@@ -66,9 +62,8 @@ export default function SinglePost() {  //pass results?  variable in order to se
     }
     
     const handleUpdate = async()=> {   //updating on FE
-        try {  //represents client - baseURL: "https://expansivedesigns.com/exdblog", to update data
+        try {  
             await axios.put(`/posts/${post._id}`, {  
-                //await axiosInstance.put("/posts/" + post._id, {                 
                 username: user.username, title, desc 
             })
 
@@ -76,19 +71,13 @@ export default function SinglePost() {  //pass results?  variable in order to se
         } catch(err){}
     }
 
-    // var params = {Bucket: process.env.AWS_BUCKET_NAME, Key: req.params.filename};
-    // var url = s3.getSignedUrl('getObject', params);
-    // console.log('The URL is', url);  
-
     return (
         <div className="singlePost">
             <div className="singlePostWrapper">
                 { post.photo && (                  
                         <img 
                             className="singlePostImg" 
-                            //src={imageLoc}
                             src={ PF + post.photo }
-                            // onChange={setImageUrl}
                             alt="aws img"
                         />
                 )}   

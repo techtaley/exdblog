@@ -8,14 +8,11 @@ import { axiosInstance } from '../../config'
 //import axios from 'axios'
 
 export default function Login() {
-    //useRef() allows you to persist values between renders, keep track of previous state values
-    //if used with useEffect() we are updating useRef current value with each input update 
     const [ username, getUsername ] = useState('')    
     const [ password, getPassword ] = useState('')
     const userRef = useRef()
     const passwordRef = useRef()
     const { dispatch, isFetching } = useContext(Context)  //upates dispatch in Context.js
-    //const [ redirect, setRedirect ] = useState(false)          
 
     const handleSubmit = async (e) => {
         e.preventDefault()
