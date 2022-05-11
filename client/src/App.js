@@ -14,8 +14,6 @@ export default function App() {
   const { user } = useContext(Context)
 
   return (
-    <div className="App">
-
       <Router>
         <TopBar />
         <Switch>            
@@ -25,19 +23,8 @@ export default function App() {
           <Route path="/logout">{ user ? <Login /> : <Register />}</Route>          
           <Route path="/write">{ user ? <Write /> : <Register />}</Route>
           <Route path="/settings">{ user ? <Settings /> : <Register />}</Route>
-          <Route path="/post/:postId"><Single /></Route>                     
-       
-
-          {/* <Route path="/post/:postId"><Single /></Route>            
-          <Route path="/app" exact component={Home} /> 
-          <Route path="/register" component={Register} />                 
-          <Route path="/login" component={Login} />                 
-          <Route path="/write" component={Write} /> 
-          <Route path="/settings" component={Settings} />  
-          <Route path="/post/:postId" component={Single} /> */}
-         
+          <Route path="/post/:postId"><Single /></Route>                       
         </Switch>
       </Router>
-    </div>
   )
 }

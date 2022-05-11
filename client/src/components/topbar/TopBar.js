@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+//import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import {Facebook, Twitter, Instagram, LinkedIn, Search, Menu } from '@material-ui/icons';
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
@@ -43,7 +43,7 @@ export default function TopBar() {
                     <div className="topCenter">
                         <Link to="/" className="topMenu">HOME</Link>
                         <Link to="/write" className="topMenu">WRITE</Link>
-                        <Link to="/logout" className="topMenu" onClick={handleLogout}>{user && "LOGOUT"}</Link>                  
+                        <Link className="topMenu" onClick={handleLogout}>{user && "LOGOUT"}</Link>                  
                     </div> 
 
                     <div className="topRight">
