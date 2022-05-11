@@ -6,7 +6,7 @@ import Login from './pages/login/Login'
 import Register from './pages/register/Register'
 import Single from './pages/single/Single'
 
-//import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { useContext } from 'react'
 import { Context } from './context/Context'
 
@@ -15,9 +15,8 @@ export default function App() {
 
   return (
     <div className="App">
-        <TopBar />
 
-      {/* <Router>
+      <Router>
         <TopBar />
         <Switch>            
           <Route exact path="/"><Home /></Route>
@@ -26,7 +25,8 @@ export default function App() {
           <Route path="/logout">{ user ? <Login /> : <Register />}</Route>          
           <Route path="/write">{ user ? <Write /> : <Register />}</Route>
           <Route path="/settings">{ user ? <Settings /> : <Register />}</Route>
-          <Route path="/post/:postId"><Single /></Route>                            
+          <Route path="/post/:postId"><Single /></Route>                     
+       
 
           {/* <Route path="/post/:postId"><Single /></Route>            
           <Route path="/app" exact component={Home} /> 
@@ -34,12 +34,10 @@ export default function App() {
           <Route path="/login" component={Login} />                 
           <Route path="/write" component={Write} /> 
           <Route path="/settings" component={Settings} />  
-          <Route path="/post/:postId" component={Single} /> 
-          */}
-      {/*          
+          <Route path="/post/:postId" component={Single} /> */}
+         
         </Switch>
-      </Router>  
-      */}
+      </Router>
     </div>
   )
 }
