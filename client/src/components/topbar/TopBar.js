@@ -5,12 +5,6 @@ import { useContext } from 'react'
 import { useState } from 'react'
 import { Context } from '../../context/Context'
 
-import write from './../../pages/write/Write'
-import register from './../../pages/register/Register'
-import settings from './../../pages/settings/Settings'
-import login from './../../pages/login/Login'
-import logout from './../../pages/logout/Logout'
-
 import './topbar.css'
 
 import dotenv from "dotenv"
