@@ -21,7 +21,6 @@ dotenv.config()
 
 app.use(express.json())
 
-
 const PORT = process.env.PORT || 4000
 
 mongoose.connect(process.env.MONGODB_URI || dbURL, {
@@ -111,7 +110,7 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
     res.send(file)   //FE sends the file back to the client
 })
 
-//endpoints
+//REST API endpoints
 app.use("/api/auth", authRoute)   
 app.use("/api/posts", postRoute) 
 app.use("/api/categories", categoryRoute) 
@@ -120,7 +119,13 @@ app.use("/api/users", userRoute)
 app.use(express.static(path.join(__dirname, '/client/build'))) 
 
 app.get('*', (req, res) => {  
-        res.sendFile(path.join(__dirname, '/client', 'build', 'index.html'))
+    res.sendFile(path.join(__dirname, '/client/build', 'index.html'))
 })
 
+//const PORT = process.env.PORT || 4000 ==> look inside the .env file for env variables and if nothing use 4000
 app.listen(PORT, () => console.log(`Server is up and running ${PORT}`))
+
+//LOCAL TESTING
+//app.listen(PORT, () => console.log(`Server is up and running http://localhost:${PORT}/api/posts`))
+//app.listen(PORT, () => console.log(`Server is up and running http://localhost:${PORT}/api/users/613f4d153d022e00165e0e26`))  - 1 user 'techtaley'
+//app.listen(PORT, () => console.log(`Server is up and running http://localhost:${PORT}/api/categories`))
