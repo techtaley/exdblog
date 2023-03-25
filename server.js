@@ -58,14 +58,15 @@ mongoose.connect(process.env.MONGODB_URI || dbURL, {
 //*** AWS3 Clous storage - start *** 
 
 //step 2.  Upload images from client-side to AWS3
-const aws = require('aws-sdk')
-
+//const aws = require('aws-sdk')  //use '@aws-sdk/client-s3' instead
+const { S3Client } = require('@aws-sdk/client-s3')
 const bucket = process.env.AWS_BUCKET_NAME
 const region = process.env.AWS_BUCKET_REGION
 const accessKeyId = process.env.AWS_ACCESS_KEY_ID
 const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY  
 
-const s3 = new aws.S3({
+//const s3 = new aws.S3({
+const s3 = new S3Client({   
     accessKeyId,
     secretAccessKey,
     region,
@@ -96,6 +97,7 @@ const upload = multer({
         },    
         key: function (req, file, cb) {  //name of file taken from originalname and saved as key
             console.log(file)
+            //cd(null, Data.now().toString()) //multer recommendation
             cb(null, file.originalname )  //if no original name then error is null
         }
     })
