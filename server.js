@@ -125,7 +125,7 @@ app.get('*', (req, res) => {
 })
 
 //const PORT = process.env.PORT || 4000 ==> look inside the .env file for env variables and if nothing use 4000
-app.listen(PORT, () => console.log(`Server is up and running ${PORT}`))
+app.listen(PORT, () => console.log(`https://exdblog.onrender.com/api/posts Server is up and running ${PORT}`))
 
 //LOCAL TESTING
 //app.listen(PORT, () => console.log(`Server is up and running http://localhost:${PORT}/api/posts`))

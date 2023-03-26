@@ -7,6 +7,7 @@
   "description": "exd blog",
   "main": "server.js",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.299.0",
     "aws-sdk": "^2.1009.0",
     "axios": "^0.23.0",
     "bcrypt": "^5.1.0",
@@ -39,5 +40,13 @@
     "app"
   ],
   "author": "TaLoveous Goodwin",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/expansivedesigns/exdblog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/expansivedesigns/exdblog/issues"
+  },
+  "homepage": "https://github.com/expansivedesigns/exdblog#readme"
 }
