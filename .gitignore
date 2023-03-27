@@ -6,3 +6,5 @@ server_disabled.js
 package_HOST.json
 Procfile
 package.json_disable.json
+Dockerfile
+.dockerignore

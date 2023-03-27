@@ -1,2 +1,6 @@
 /node_modules
 package-lock.json
+Dockerfile
+Dockerfile-production
+.dockerignore
+/build
