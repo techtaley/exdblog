@@ -1,20 +1,22 @@
 //const s3 = require('./s3')
-const express = require('express')
+import express, { json } from "express"
+const express = require("express")
+const router = require("express").Router()  
+
 const app = express()
 const dotenv = require("dotenv")
 const cors = require("cors")
 const mongoose = require('mongoose')
 
-const authRoute =  require('./routes/auth.js')
-const userRoute =  require('./routes/users.js')
-const postRoute =  require('./routes/posts.js')
-const categoryRoute = require('./routes/categories.js')
+const authRoute =  require('./routes/auth')
+const userRoute =  require('./routes/users')
+const postRoute =  require('./routes/posts')
+const categoryRoute = require('./routes/categories')
 
-const router = require("express").Router()  
 const User = require("./models/User")
 const Post = require("./models/Post")
 const bcrypt = require('bcrypt')
-const { Router } = require("express")
+//const { Router } = require("express")
 const path = require("path") 
 
 dotenv.config()
